@@ -1,0 +1,37 @@
+* {
+	background-color: #27292b;
+	color: white;
+	font-family: 'system-ui';
+	font-weight: 200;
+}
+
+.main-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.main-header {
+	margin: auto;
+	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+}
+
+.main-header h1 {
+	font-weight: 800;
+	margin-bottom: 0;
+}
+
+.main-header h3 {
+	font-weight: 200;
+	margin-top: 0;
+}
+
+.pfp-header {
+	display: flex;
+	flex-direction: column;
+}
+
+.text-header {
+	margin-left: 20px;
+}
