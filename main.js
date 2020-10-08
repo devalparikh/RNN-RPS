@@ -24,13 +24,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
             cpuWinLoss.push(scoreValues[cpuNextMove]);
 
             if (scoreValues[cpuNextMove] === 0) {
-                domResult.innerHTML = '<div>YOU WON!</div>';
+                domResult.innerHTML = 'YOU WON!';
                 domResult.className = 'win';
             } else if (scoreValues[cpuNextMove] === 1) {
-                domResult.innerHTML = '<div>YOU LOSE!</div>';
+                domResult.innerHTML = 'YOU LOSE!';
                 domResult.className = 'lose';
             } else {
-                domResult.innerHTML = '<div>TIED!</div>';
+                domResult.innerHTML = 'TIED!';
                 domResult.className = 'tie';
             }
             buffer.push(optId);
@@ -38,12 +38,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
             data = data.slice(-13);
             domMyMove.innerHTML = optId;
             domCpuMove.innerHTML = cpuNextMove;
-            domOpts.className += ' disabled';
+            let oldmove = cpuNextMove
+            // domOpts.className += ' disabled';
             setTimeout(() => {
                 cpuNextMove = calcNextMove();
                 setTimeout(() => {
                     domMyMove.innerHTML = optId;
-                    domCpuMove.innerHTML = cpuNextMove;
+                    domCpuMove.innerHTML = oldmove;
                     domOpts.className = '';
                     domResult.className = '';
                     const cpuScore = cpuWinLoss.reduce((t, s) => t + Math.floor(s), 0);
@@ -69,4 +70,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
         return options[cpuMoveIdx];
     }
 });
-
